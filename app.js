@@ -13,9 +13,11 @@ const fs = require('fs');
 
 // Read the json livsmedelsdata into ldata
 // (convert it from a JSON-string to JS data)
-const ingredientData = require('./json/livsmedelsdata.json');
+const Component = require('./classes/component.class.js');
+let foodComponentData = require('./json/livsmedelsdata.json');
+foodComponentData = foodComponentData.map(obj => new Component(obj));
 
 
 // Create server routes 
 let Routes = require('./classes/routes.class.js');
-new Routes(app, ingredientData);
+new Routes(app, foodComponentData);
