@@ -3,9 +3,9 @@
 module.exports = class Routes {
 
 
-    constructor(app, ingredientData) {
+    constructor(app, foodData) {
         this.app = app;
-        this.ingredientData = ingredientData;
+        this.foodData = foodData;
         this.setRoutes();
     }
 
@@ -22,12 +22,12 @@ module.exports = class Routes {
           res.json({error: 'Please provide at least two characters...'});
           return;
         }
-        // filter ingredients so that only those with a Namn
+        // filter foods so that only those with a Namn
         // matching start are left, then map from obj to obj.Namn
-        let result = this.ingredients.filter(
-          ingredient => ingredient.Namn.toLowerCase().indexOf(start) == 0
+        let result = this.foodData.filter(
+          food => food.Namn.toLowerCase().indexOf(start) == 0
         ).map(
-          ingredient => ingredient.Namn
+          food => food.Namn
         );
         res.json(result);
       }

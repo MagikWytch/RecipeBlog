@@ -10,14 +10,14 @@ let server = app.listen(3000, () => {
 
 const fs = require('fs');
 
-
-// Read the json livsmedelsdata into ldata
-// (convert it from a JSON-string to JS data)
 const Component = require('./classes/component.class.js');
-let foodComponentData = require('./json/livsmedelsdata.json');
-foodComponentData = foodComponentData.map(obj => new Component(obj));
 
+let foodData = require('./json/livsmedelsdata.json');
+foodData = foodData.map(obj => new Component(obj));
+// foodData[10].Naringsvarden.Naringsvarde.forEach(item => {
+//   console.log(item)
+// });
 
 // Create server routes 
 let Routes = require('./classes/routes.class.js');
-new Routes(app, foodComponentData);
+new Routes(app, foodData);
