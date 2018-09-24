@@ -1,0 +1,100 @@
+[
+    {
+        "name": "Ostkaka",
+        "persons": 2,
+        "instructions": [
+            "Sätt ugnen på 200 grader.",
+            "Vispa först ihop ägg och socker, vispa ihop men inte så hårt.",
+            "Hacka mandeln och blanda med mjölet, keson och grädden.",
+            "Baka i ugnen i ca 45 minuter, beroende på hur djup formen är. Låt kakan svalna.",
+            "Vispa grädden med lite socker.",
+            "Skär ut en trekant av ostkakan, klicka lite grädde och lägg hjortron på detta."
+        ],
+        "ingredients": [
+            {
+                "name": "ägg",
+                "units": 2,
+                "measuringUnit": "st",
+                "unitEquivalentInGrams": 40
+            },
+            {
+                "name": "socker",
+                "units": 3,
+                "measuringUnit": "msk",
+                "unitEquivalentInGrams": 10
+            },
+            {
+                "name": "mandel",
+                "units": 20,
+                "measuringUnit": "g",
+                "unitEquivalentInGrams": 20
+            },
+            {
+                "name": "mjöl",
+                "units": 3,
+                "measuringUnit": "msk",
+                "unitEquivalentInGrams": 10
+            },
+            {
+                "name": "keso",
+                "units": 450,
+                "measuringUnit": "g",
+                "unitEquivalentInGrams": 450
+            },
+            {
+                "name": "grädde",
+                "units": 0.5,
+                "measuringUnit": "dl",
+                "unitEquivalentInGrams": 50
+            }
+        ],
+        "urlToImg": "/images/beautiful-pancake.jpg",
+        "category": "Efterrätt"
+    },
+    {
+        "name": "Pannkakor",
+        "persons": 2,
+        "instructions": [
+            "Blanda mjöl, bakpulver och salt i en bunke.",
+            "Vispa i hälften av mjölken och vispa till en jämn smet.",
+            "Tillsätt ägg, vaniljsocker, smält smör och resten av mjölken till pankakssmeten.",
+            "Smält en klick smör i en varm stekpanna.",
+            "Häll 1/2-1 deciliter pannkakssmet i stekpannan, beroende på hur tjocka pannkakor du vill ha.",
+            "Servera dina pannkakor med t.ex. vispad grädde, färska jordgubbar och en klick jordgubbssylt."
+        ],
+        "ingredients": [
+            {
+                "name": "vetemjöl",
+                "units": 2.5,
+                "measuringUnit": "dl",
+                "unitEquivalentInGrams": 250
+            },
+            {
+                "name": "bakpulver",
+                "units": 2.5,
+                "measuringUnit": "tsk",
+                "unitEquivalentInGrams": 5
+            },
+            {
+                "name": "mjölk",
+                "units": 6,
+                "measuringUnit": "dl",
+                "unitEquivalentInGrams": 600
+            },
+            {
+                "name": "ägg",
+                "units": 3,
+                "measuringUnit": "st",
+                "unitEquivalentInGrams": 30
+            },
+            {
+                "name": "smör",
+                "units": 2,
+                "measuringUnit": "msk",
+                "unitEquivalentInGrams": 10
+            }
+        ],
+        "urlToImg": "/images/beautiful-pancake.jpg",
+        "category": "Efterrätt"
+    }
+]

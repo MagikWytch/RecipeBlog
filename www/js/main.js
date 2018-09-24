@@ -1,3 +1,15 @@
-console.log('If you see me, then I work!');
+$('#search').click(() => {
+    let valueToSearchFor = $('#search-value').val();
+    getRecipes(valueToSearchFor)
+})
 
-// Add some nice listeners here.
+function getRecipes(valueToSearchFor) {
+    $.get('http://localhost:3000/recipes/' + valueToSearchFor, (data) => {
+        data.forEach(addRecipes);
+    });
+}
+
+function addRecipes(recipeName) {
+    $('#display-result').empty();
+    $('#display-result').append(`<h4> ${recipeName} </h4>`);
+}
