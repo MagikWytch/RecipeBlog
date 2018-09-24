@@ -21,15 +21,12 @@ module.exports = class Routes {
           return;
         }
 
-        let recipes = require('../json/recipes/recipes.json') || [];
+        let recipes = require('../json/recipes.json') || [];
         
         recipes = recipes.filter((recipe) =>{
-          return recipe.name.toLowerCase().includes(value)
-        })
-        .map((recipe)=>{
-          return recipe.name
+          return recipe.name.toLowerCase().includes(value);
         });
-
+        
         res.json(recipes);
       }
     );

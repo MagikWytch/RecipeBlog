@@ -10,10 +10,10 @@ let server = app.listen(3000, () => {
 
 const fs = require('fs');
 
-const Component = require('./classes/component.class.js');
+const Ingredients = require('./classes/ingredients.class.js');
 
 let foodData = require('./json/livsmedelsdata.json');
-foodData = foodData.map(obj => new Component(obj));
+foodData = foodData.map(obj => new Ingredients(obj));
 // foodData[10].Naringsvarden.Naringsvarde.forEach(item => {
 //   console.log(item)
 // });
