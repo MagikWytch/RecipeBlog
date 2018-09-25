@@ -12,12 +12,12 @@ const fs = require('fs');
 
 const Ingredients = require('./classes/ingredients.class.js');
 
-let foodData = require('./json/livsmedelsdata.json');
-foodData = foodData.map(obj => new Ingredients(obj));
+let nutrients = require('./json/livsmedelsdata.json');
+nutrients = nutrients.map(obj => new Ingredients(obj));
 // foodData[10].Naringsvarden.Naringsvarde.forEach(item => {
 //   console.log(item)
 // });
 
 // Create server routes 
 let Routes = require('./classes/routes.class.js');
-new Routes(app, foodData);
+new Routes(app, nutrients);

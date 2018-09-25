@@ -2,10 +2,9 @@ const Recipe = require('./recipe.class');
 
 module.exports = class Routes {
 
-
-  constructor(app, foodData) {
+  constructor(app, nutrients) {
     this.app = app;
-    this.foodData = foodData;
+    this.nutrients = nutrients;
     this.setRoutes();
   }
 
@@ -22,14 +21,41 @@ module.exports = class Routes {
         }
 
         let recipes = require('../json/recipes.json') || [];
-        
-        recipes = recipes.filter((recipe) =>{
+
+        recipes = recipes.filter((recipe) => {
           return recipe.name.toLowerCase().includes(value);
         });
-        
         res.json(recipes);
       }
     );
+
+    this.app.get(
+      '/ingredients/:startOfName',
+      (req, res) => {
+
+        let start = req.params.startOfName.toLowerCase();
+
+        if (start.length < 2) {
+          res.json({ error: 'Please provide at least two characters...' });
+          return;
+        }
+
+        let result = this.nutrients.filter(
+          nutrient => nutrient.Namn.toLowerCase().indexOf(start) == 0
+        ).map(
+          nutrient => nutrient.Namn
+        );
+        res.json(result);
+      }
+    );
+
+
+    this.app.get(
+      '/admin',
+      (req, res) => {
+
+      })
+
 
 
 
