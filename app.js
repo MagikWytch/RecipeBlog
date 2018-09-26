@@ -8,8 +8,6 @@ let server = app.listen(3000, () => {
   console.log('Server is listening on port', server.address().port)
 });
 
-const fs = require('fs');
-
 const Ingredients = require('./classes/ingredients.class.js');
 
 let nutrients = require('./json/livsmedelsdata.json');

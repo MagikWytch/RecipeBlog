@@ -1,7 +1,7 @@
-// Recipe stuff
+// Recipe functionality
 
 // listeners
-$('#search-recipe').on('click', getRecipeValue);
+$('#search-recipe').on('click', () => { getRecipeValue(); });
 $('#recipe-search-value').on('keyup', (e) => {
     if (e.keyCode == 13) { getRecipeValue(); }
 })
@@ -10,20 +10,42 @@ function getRecipeValue() {
     getRecipes($('#recipe-search-value').val());
 }
 
-function getRecipes(searchValue) {
-    if (!searchValue) return;
-    $.get('http://localhost:3000/recipes/' + searchValue, (data) => {
-        $('#display-recipe-result').empty();
-        data.forEach(addRecipes);
+function getRecipes(valueToSearchFor) {
+    $('#display-recipe-result').empty();
+
+    $.get('http://localhost:3000/recipes/' + valueToSearchFor, (data) => {
+
+        if (data.error) {
+            alert('Skriv in minst 2 bokstäver');
+        }
+        else if(data.length === 0){
+            alert('Finns ej');
+        }
+        else {
+            addRecipes(data);
+        }
     });
+
 }
 
-function addRecipes(recipe) {
-    $('#display-recipe-result').append(` <h4> <a href="#"> ${recipe.name} </a> </h4> `);
+function addRecipes(recipes) {
+
+    let ul = $('<ul></ul>');
+
+    for (let recipe of recipes) {
+
+        let li = $('<li></li>');
+        let a = $('<a href="#"></a>');
+        a.text(recipe.name);
+        li.append(a);
+        ul.append(li);
+    }
+
+    $('#display-recipe-result').append(ul);
 }
 
 
-// Ingredient stuff
+// Ingredient functionality 
 
 // listeners
 $('#search-ingredient').on('click', getIngredientValue);
@@ -35,15 +57,32 @@ function getIngredientValue() {
     getIngredients($('#ingredient-search-value').val())
 }
 
-function getIngredients(searchValue) {
-    if (!searchValue) return;
-    $.get('http://localhost:3000/ingredients/' + searchValue, (data) => {
-        $('#display-ingredient-result').empty();
-        data.forEach(addIngredients);
-    });
+function getIngredients(valueToSearchFor) {
+    $('#display-ingredient-result').empty();
+    if (valueToSearchFor.length > 1) {
+        $.get('http://localhost:3000/ingredients/' + valueToSearchFor, (data) => {
+            $('#display-ingredient-result').empty();
+            addIngredients(data)
+        });
+    }
+    else {
+        $('#display-ingredient-result').append(` <p> Sökningen gav inga resultat, " ${valueToSearchFor} "! </p> `);
+        return;
+    }
 }
 
-function addIngredients(ingredientName) {
-    $('#display-ingredient-result').append(` <h4> <a href="#"> ${ingredientName} </a> </h4> `);
+function addIngredients(ingredient) {
+    let ul = $('<ul></ul>');
+
+    for (let name of ingredient) {
+
+        let li = $('<li></li>');
+        let a = $('<a href="#"></a>');
+        a.text(name);
+        li.append(a);
+        ul.append(li);
+    }
+
+    $('#display-ingredient-result').append(ul);
 }
 

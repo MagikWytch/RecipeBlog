@@ -1,4 +1,8 @@
-const Recipe = require('./recipe.class');
+// const Recipe = require('./recipe.class');
+
+const fs = require('fs');
+const recipePath = '../json/recipes.json';
+const recipes = require(recipePath);
 
 module.exports = class Routes {
 
@@ -10,6 +14,9 @@ module.exports = class Routes {
 
   setRoutes() {
 
+    this.app.get('/recipes', (req, res) => {
+      res.json({ error: 'Please provide at least two characters...' });
+    });
     this.app.get(
       '/recipes/:partOfRecipeName',
       async (req, res) => {
@@ -20,14 +27,15 @@ module.exports = class Routes {
           return;
         }
 
-        let recipes = require('../json/recipes.json') || [];
-
-        recipes = recipes.filter((recipe) => {
-          return recipe.name.toLowerCase().includes(value);
-        });
-        res.json(recipes);
+        let result = recipes.filter(
+          recipe => recipe.name.toLowerCase().includes(value)
+        ).map(
+          recipe => recipe
+        );
+        res.json(result);
       }
     );
+
 
     this.app.get(
       '/ingredients/:startOfName',
