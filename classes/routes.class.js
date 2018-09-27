@@ -1,8 +1,9 @@
 // const Recipe = require('./recipe.class');
 
 const fs = require('fs');
-const recipePath = '../json/recipes.json';
-const recipes = require(recipePath);
+const path = require('path');
+const recipePath = path.join(__dirname, '../json/recipes.json');
+let recipes = require(recipePath);
 
 module.exports = class Routes {
 
@@ -17,6 +18,7 @@ module.exports = class Routes {
     this.app.get('/recipes', (req, res) => {
       res.json({ error: 'Please provide at least two characters...' });
     });
+
     this.app.get(
       '/recipes/:partOfRecipeName',
       async (req, res) => {
@@ -36,6 +38,24 @@ module.exports = class Routes {
       }
     );
 
+    this.app.get('/recipe/:name', (req, res) => {
+
+
+    })
+
+    this.app.post('/recipes', (req, res) => {
+      recipes = require(recipePath);
+      recipes.push(req.body);
+      fs.writeFile(recipePath, JSON.stringify(recipes, null, '  '), error => {
+        console.log(error);
+        res.json({ success: !error })
+      });
+    });
+
+
+    this.app.get('/ingredients', (req, res) => {
+      res.json({ error: 'Please provide at least two characters...' });
+    });
 
     this.app.get(
       '/ingredients/:startOfName',

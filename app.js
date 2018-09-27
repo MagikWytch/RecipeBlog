@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 
 app.use(express.static('www'));
+app.use(express.json({extended: false}));
 
 let server = app.listen(3000, () => {
   console.log('Server is listening on port', server.address().port)

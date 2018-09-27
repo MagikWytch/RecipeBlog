@@ -17,16 +17,47 @@
   </header>
 
   <section id="add-a-new-recipe-view">
+
+    <h2>Lägg till ett nytt recept här!</h2>
+
     <section>
-      <h2>Lägg till ett nytt recept här!</h2>
-      <p>Sök på ingrediens:</p>
-      <input id="ingredient-search-value" type="text">
-      <select>
-        
-      </select>
-      <button id="search-ingredient">Sök</button>
+      <form>
+        <div class="form-group">
+          <label for="recipe-name">Titel på recept</label><br>
+          <input id="recipe-name" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="tag-selection">Välj Kategori</label><br>
+          <select id="tag-selection">
+            <option>Frukost</option>
+            <option>Middag</option>
+            <option>Efterrätt</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="load-image">Lägg till bild</label><br>
+          <input id="load-image" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="ingredient-search-value">Lägg till ingredienser</label><br>
+          <input id="ingredient-search-value" type="text">
+          <section id="display-ingredient-result"></section>
+        </div>
+
+        <div class="form-group">
+          <label for="instructions">Lägg till instruktioner</label><br>
+          <textarea id="instructions" type="text" rows="3"></textarea>
+          <input id="add-instructions" type="button" value="Lägg till">
+        </div>
+
+      </form>
     </section>
-    <section id="display-ingredient-result"></section>
+
+
+
   </section>
 
   <footer>
