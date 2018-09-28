@@ -1,6 +1,12 @@
 // Recipe functionality
+// this looks very messy, i might want 
+// to split the code into new .js files
+// or find a way to reuse the same
+// functions, Recipe.class might not
+// have been a bad idea
 
-// listeners
+// recipe search box listeners
+// old school style enter or click
 $('#search-recipe').on('click', () => { getRecipeValue(); });
 $('#recipe-search-value').on('keyup', (e) => {
     if (e.keyCode == 13) { getRecipeValue(); }
@@ -11,6 +17,7 @@ function getRecipeValue() {
 }
 
 function getRecipes(valueToSearchFor) {
+    $('section.person-info').remove();
     $('#display-recipe-result').empty();
 
     $.get('http://localhost:3000/recipes/' + valueToSearchFor, (data) => {
@@ -36,8 +43,7 @@ function addRecipes(recipes) {
 
         let li = $('<li></li>');
         let a = $('<a href="#"></a>');
-        a.text(recipe);
-        a.data('recipeObject', recipe);
+        a.text(recipe.name);
         li.append(a);
         ul.append(li);
     }
@@ -45,38 +51,57 @@ function addRecipes(recipes) {
     $('#display-recipe-result').append(ul);
 }
 
-// click on a recipe in the list
+// recipe list Listener
+// keyup function only
 $(document).off('click', 'ul.recipes a');
 $(document).on('click', 'ul.recipes a', function () {
-
-    let r = $(this);
-    displayRecipeInfo(r.data('recipeObject'));
+    let value = this.text;
+    getOneRecipe(value);
 });
 
-function displayRecipeInfo(recipe) {
+function getOneRecipe(name) {
+    $.get('http://localhost:3000/recipe-by-name/' + name, (recipe) => {
+
+        addOneRecipe(recipe);
+    })
+}
+
+function addOneRecipe(recipe) {
     let recipeInfo = $('<section></section>');
     recipeInfo.addClass('recipe-info');
 
-    for (let propertyName in recipe) {
+    let title = $('<h5></h5>');
+    title.text(recipe.name);
+    recipeInfo.append(title);
 
-        console.log(propertyName);
+    let unorderedList = $('<ul></ul>');
+    recipeInfo.append(unorderedList);
+    recipe.ingredients.forEach((ingredient) => {
+        let ingredientLi = $('<li></li>');
+        ingredientLi.text(ingredient.name + ' ' + ingredient.units + ' ' + ingredient.measuringUnit);
+        unorderedList.append(ingredientLi);
+    })
 
-        let val = recipe[propertyName];
+    let orderedList = $('<ol></ol>');
+    recipeInfo.append(orderedList);
+    recipe.instructions.forEach((instruction) => {
+        console.log(instruction);
+        let instructionLi = $('<li></li>');
+        instructionLi.text(instruction);
+        orderedList.append(instructionLi);
+    })
 
-        let h3 = $('<h3></h3>');
-        h3.text(propertyName[0].toUpperCase() + propertyName.substr(1));
-
-        let p = $('<p></p>');
-        p.text(val);
-        recipeInfo.append(h3).append(p);
-    }
-
-    $('#display-recipe-result').remove();
-    $('section.person-info').remove();
-    $('body').append(recipeInfo);
+    $('#display-recipe-result').empty();
+    $('section.recipe-info').remove();
+    $('#display-recipe-result').append(recipeInfo);
 }
 
 function createNewRecipe() {
+
+    let recipeObj = {
+
+
+    }
     // I want to make a new recipe here that I can send 
     // as a completely new, temporary object to postARecipe.
     // I need to check so that it contains what I want and
@@ -84,6 +109,7 @@ function createNewRecipe() {
     // It will be created from the inputs in the admin-html 
 }
 
+// create the new file and add it to the recipes.json
 function postARecipe(recipeObj) {
     $.ajax({
         method: 'POST',
