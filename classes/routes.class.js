@@ -14,7 +14,6 @@ module.exports = class Routes {
       ingredients: [],
       instructions: []
     };
-    this.bengts = [];
     this.setRoutes();
   }
 
@@ -23,27 +22,7 @@ module.exports = class Routes {
     // ########################################## |
     // #           INDEX.html ROUTES            # |
     // ########################################## v
-    this.app.get('/bengt-demo-form', (req, res) => {
-      res.sendFile(path.join(__dirname, '../www/bengt.html'));
-    });
-
-    // {bengts: [{}, {}, ..., {}] }
-    this.app.get('/bengts', (req, res) => {
-      res.json({ bengts: this.bengts });
-    })
-
-    // newBengt = {name: 'BENGT URLZ'}
-    this.app.post('/bengt-demo-form', (req, res) => {
-      console.log(req.body);
-
-      let newBengt = { name: req.body.bengt_value };
-      console.log('New bengt added: ', JSON.stringify(newBengt));
-      this.bengts.push(newBengt);
-
-      res.json({ message: 'OK', bengts: this.bengts });
-    });
-
-    // Recipes
+      
     this.app.get('/recipes', (req, res) => {
       res.json({ error: 'Please provide at least two characters...' });
     });
@@ -101,9 +80,9 @@ module.exports = class Routes {
 
     ////////////////////////////////////////////
 
-   /*  this.app.get('/fetch-name', (req, res) => {
-      res.json(this.recipeObj.name);
-    }) */
+    /*  this.app.get('/fetch-name', (req, res) => {
+       res.json(this.recipeObj.name);
+     }) */
 
     this.app.post('/add-name', (req, res) => {
       console.log(req.body);
