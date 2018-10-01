@@ -21,10 +21,26 @@
 
     <main>
 
+      <form id="category-form" class="form-inline">
+        <div class="input-group">
+          <label for="recipe-category" class="sr-only">Kategori</label>
+          <select id="recipe-category" type="text" name="recipe_category" class="form-control">
+            <option value="0" hidden>Välj kategori...</option>
+            <option value="Frukost">Frukost</option>
+            <option value="Middag">Middag</option>
+            <option value="Efterrätt">Efterrätt</option>
+            <option value="Student">Student</option>
+          </select>
+          <div class="input-group-append">
+            <button id="add_category" type="submit" class="btn btn-default">Lägg till</button>
+          </div>
+        </div>
+      </form>
+
       <form id="name-form" class="form-inline">
         <div class="input-group">
           <label for="name" class="sr-only">Namn</label>
-          <input input id="recipe-name" type="text" name="recipe_name" class="form-control" placeholder="Namn">
+          <input input id="recipe-name" type="text" name="recipe_name" class="form-control clear-input" placeholder="Namn">
           <div class="input-group-append">
             <button id="add_name" type="submit" class="btn btn-default">Lägg till</button>
           </div>
@@ -33,52 +49,81 @@
 
       <form id="instruction-form" class="form-inline">
         <div class="input-group">
-          <label for="recipe-instruction" class="sr-only">instruktioner</label>
-          <input input id="recipe-instruction" type="text" name="recipe_instruction" class="form-control" placeholder="Instruktion">
+          <label for="recipe-instruction" class="sr-only">Instruktioner</label>
+          <input input id="recipe-instruction" type="text" name="recipe_instruction" class="form-control clear-input"
+            placeholder="Instruktion">
           <div class="input-group-append">
-            <button id="add_name" type="submit" class="btn btn-default">Lägg till</button>
+            <button id="add_instruction" type="submit" class="btn btn-default">Lägg till</button>
+          </div>
+        </div>
+      </form>
+
+      <form id="image-form" class="form-inline">
+        <div class="input-group">
+          <label for="recipe-image" class="sr-only">instruktioner</label>
+          <input input id="recipe-image" type="text" name="recipe_image" class="form-control clear-input" placeholder="Ladda upp bild">
+          <div class="input-group-append">
+            <button id="add_image" type="submit" class="btn btn-default">Lägg till</button>
           </div>
         </div>
       </form>
 
       <form id="ingredient-form" class="form-inline">
         <div class="input-group">
-          <label for="ingredient" class="sr-only">Ingrediens</label>
-          <input input id="ingredient-name" type="text" name="ingredient_name" value="" class="form-control"
+          <label for="ingredient-name" class="sr-only">Ingrediens</label>
+          <input input id="ingredient-name" type="text" name="ingredient_name" class="form-control clear-input"
             placeholder="Ingrediens">
         </div>
         <div class="input-group">
           <label for="units" class="sr-only">Mängd</label>
-          <input input id="units" type="text" name="ingredient_units" class="form-control" placeholder="Mängd">
+          <input input id="units" type="text" name="ingredient_units" class="form-control clear-input" placeholder="Mängd">
         </div>
         <div class="input-group">
-          <label for="measureUnit" class="sr-only">Måttenhet</label>
-          <input input id="measureUnit" type="text" name="ingredient_measuring_unit" class="form-control" placeholder="Enhet">
+          <label for="measure-unit" class="sr-only">Måttenhet</label>
+          <select id="measure-unit" type="text" name="ingredient_measuring_unit" class="form-control">
+            <option value="0" hidden>Välj enhet...</option>
+            <option value="dl">dl</option>
+            <option value="msk">msk</option>
+            <option value="tsk">tsk</option>
+            <option value="krm">krm</option>
+            <option value="g">g</option>
+            <option value="kg">kg</option>
+            <option value="l">l</option>
+          </select>
         </div>
         <div class="input-group">
           <label for="grams" class="sr-only">Gram</label>
-          <input input id="grams" type="text" name="ingredient_grams" class="form-control" placeholder="Gram">
+          <input input id="grams" type="text" name="ingredient_grams" class="form-control clear-input" placeholder="Gram">
         </div>
         <div class="input-group-append">
           <button id="add_ingredient" type="submit" class="btn btn-default">Lägg till</button>
         </div>
       </form>
+
       <section id="display-ingredients"></section>
   </div>
 
   </main>
 
   <div id="preview" class="container">
-    <h2>Förhandsgranskning</h2>
+    <h2>Mitt recept!</h2>
+    
+    <h5>Kategori</h5>
+    <div id="preview-category"></div>
 
-    <h5>Titel</h5>
+    <h5>Namn</h5>
     <div id="preview-name"></div>
 
     <h5>Ingredienser</h5>
     <ul id="preview-ingredient"></ul>
 
-    <h5>Beskrivning</h5>
+    <h5>Bild länk</h5>
+    <div id="preview-image"></div>
+
+    <h5>Instruktioner</h5>
     <div id="preview-instruction"></div>
+
+    <button id="create_recipe" type="submit" class="btn btn-default">Skapa recept</button>
   </div>
 
   <div class="container">

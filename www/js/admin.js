@@ -15,17 +15,39 @@ function postARecipe(recipeObj) {
         success: d => console.log("SUCCESS IN POSTING RECIPE?", d)
     });
 }
-////////////////////////////////////////////////////////////////////
-/* $.get('http://localhost:3000/fetch-name').done(function (name) {
-    console.log('Fetched ', name, ' from server');
+// cool feature where this code runs on refresh,
+// right now the only thing it does is to clear the object...
+$.get('http://localhost:3000/clear-recipe-object').done(function (data) {
+    console.log('cleared ', data, ' from server');
+})
 
-    $('#preview-name').empty();
+$('#category-form').submit((event) => {
+    event.preventDefault();
+})
 
-    if (name) {
-        $('#preview-name').append($('<p>' + name + '</p>'));
-    }
-}) */
+// put the name into the object
+$('#add_category').on('click', () => {
+    console.log('CLICKED');
 
+    let categoryForm = $('#category-form').serialize();
+
+    $.post('http://localhost:3000/add-category', categoryForm)
+        .done(function (data) {
+
+            $('.clear-input').val('');
+            $('#recipe-category').prop('selectedIndex', 0);
+            $('#preview-category').empty()
+            if (data) {
+                $('#preview-category').append($('<p>' + data + '</p>'));
+            }
+        });
+})
+
+$('#name-form').submit((event) => {
+    event.preventDefault();
+})
+
+// put the name into the object
 $('#add_name').on('click', () => {
     console.log('CLICKED');
 
@@ -34,6 +56,7 @@ $('#add_name').on('click', () => {
     $.post('http://localhost:3000/add-name', nameForm)
         .done(function (data) {
 
+            $('.clear-input').val('');
             $('#preview-name').empty()
             if (data) {
                 $('#preview-name').append($('<p>' + data + '</p>'));
@@ -41,15 +64,43 @@ $('#add_name').on('click', () => {
         });
 })
 
-$('#add_ingredient').on('click', () => {
+$('#instruction-form').submit((event) => {
+    event.preventDefault();
+})
+
+// put the instruction into the object
+$('#add_instruction').on('click', () => {
     console.log('CLICKED');
 
+    let instructionForm = $('#instruction-form').serialize();
+
+    $.post('http://localhost:3000/add-instruction', instructionForm)
+        .done(function (data) {
+
+            $('.clear-input').val('');
+            $('#preview-instruction').empty()
+            if (data.recipeObj) {
+                data.recipeObj.forEach(instruction =>
+                    $('#preview-instruction').append(
+                        $('<li>' + instruction + '</li>')));
+            }
+        });
+})
+
+$('#ingredient-form').submit((event) => {
+    event.preventDefault();
+})
+
+// put the ingredient into the object
+$('#add_ingredient').on('click', () => {
+    console.log('CLICKED');
     let ingredientForm = $('#ingredient-form').serialize();
-    console.log(ingredientForm);
 
     $.post('http://localhost:3000/add-ingredient', ingredientForm)
         .done(function (data) {
 
+            $('.clear-input').val('');
+            $('#measure-unit').prop('selectedIndex', 0);
             $('#preview-ingredient').empty()
             if (data.recipeObj) {
                 data.recipeObj.forEach(ingredient =>
@@ -62,17 +113,8 @@ $('#add_ingredient').on('click', () => {
             }
         });
 })
-////////////////////////////////////////////////////////////////
 
-$('#ingredient-form').submit((event) => {
-    event.preventDefault();
-})
-$('#name-form').submit((event) => {
-    event.preventDefault();
-})
-$('#ingredient-form').submit((event) => {
-    event.preventDefault();
-})
+
 
 // ########################################## |
 // #            INGREDIENT                  # |
@@ -102,6 +144,8 @@ function getIngredients(searchValue) {
 }
 
 function addIngredients(ingredient) {
+
+    // $('#display-ingredients').append(`<li class="list-group-item">${ingredient}</li>`);
     let ul = $('<ul></ul>');
     ul.addClass('ingredient-list');
 
