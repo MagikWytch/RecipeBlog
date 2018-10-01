@@ -7,12 +7,13 @@ module.exports = class Routes {
 
 
 
-  constructor(app, nutrients) {
+  constructor(app, ingredientData) {
     this.app = app;
-    this.nutrients = nutrients;
+    this.ingredientData = ingredientData;
     this.recipeObj = {
       ingredients: [],
-      instructions: []
+      instructions: [],
+      nutrition: []
     };
     this.setRoutes();
   }
@@ -68,18 +69,53 @@ module.exports = class Routes {
       res.sendFile(path.join(__dirname, '../www/admin.html'));
     })
 
-    /* // post new recipe
-    this.app.post('/recipes', (req, res) => {
-      recipes = require(recipePath);
-      recipes.push(req.body);
-      fs.writeFile(recipePath, JSON.stringify(recipes, null, '  '), error => {
-        console.log(error);
-        res.json({ success: !error })
-      });
-    }); */
+    this.app.get('/ingredients', (req, res) => {
+      res.json({ error: 'Please provide at least two characters...' });
+    });
+
+
+    this.app.get(
+      '/ingredients/:startOfName',
+      (req, res) => {
+
+        let start = req.params.startOfName.toLowerCase();
+
+        if (start.length < 2) {
+          res.json({ error: 'Please provide at least two characters...' });
+          return;
+        }
+
+        let result = this.ingredientData.filter(
+          ingredient => ingredient.Namn.toLowerCase().indexOf(start) == 0
+        ).map(
+          ingredient => ingredient.Namn
+        );
+        res.json(result);
+      }
+    );
+
+    // find recipe by exact name and return it
+    this.app.get(
+      '/ingredient-by-name/:name',
+      async (req, res) => {
+        let value = req.params.name.toLowerCase();
+        if (value.length === 0) {
+          res.json({ error: 'No ingredient name' });
+          return;
+        }
+
+        let result = this.ingredientData.find((ingredient) => ingredient.name.toLowerCase().includes(value));
+        res.json(result);
+      }
+    );
 
 
     this.app.post('/recipes', (req, res) => {
+
+      for(let ingredient in this.ingredientData)
+
+
+
       recipes = require(recipePath);
       recipes.push(this.recipeObj);
       fs.writeFile(recipePath, JSON.stringify(recipes, null, '  '), error => {
@@ -174,33 +210,5 @@ module.exports = class Routes {
 
       res.json({ message: 'OK', recipeObj: this.recipeObj.ingredients });
     });
-
-    
-    // ingredients
-    this.app.get('/ingredients', (req, res) => {
-      res.json({ error: 'Please provide at least two characters...' });
-    });
-
-
-    // auto complete ingredient name and return what was found
-    this.app.get(
-      '/ingredients/:startOfName',
-      (req, res) => {
-
-        let start = req.params.startOfName.toLowerCase();
-
-        if (start.length < 2) {
-          res.json({ error: 'Please provide at least two characters...' });
-          return;
-        }
-
-        let result = this.nutrients.filter(
-          nutrient => nutrient.Namn.toLowerCase().indexOf(start) == 0
-        ).map(
-          nutrient => nutrient.Namn
-        );
-        res.json(result);
-      }
-    );
   }
 }

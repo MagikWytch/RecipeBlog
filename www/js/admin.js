@@ -6,7 +6,7 @@
 
 $(document).on('click', '#luke', function () {
     console.log('NOOOOOOOOOOOOOOOOOoooooooohhhhh......!!!!!');
-
+    $('.empty-preview').empty()
     $.post('http://localhost:3000/recipes/', (data) => {
 
 
@@ -74,7 +74,7 @@ $('#add_portions').on('click', () => {
 
     $.post('http://localhost:3000/add-portions', portionsForm)
         .done(function (data) {
-console.log(data, 'I am data, what am I?');
+            console.log(data, 'I am data, what am I?');
             $('.clear-input').val('');
             $('#preview-portions').empty()
             if (data.recipeObj) {

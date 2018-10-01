@@ -349,5 +349,22 @@
     "portions": "2",
     "name": "Löksoppa",
     "urlToImg": "http://bildpålöksoppa.png"
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Havregrynsgröt fullkorn fiberhavregryn",
+        "units": "3",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "300"
+      }
+    ],
+    "instructions": [
+      "Blanda ner havregryn med vatten och micra."
+    ],
+    "category": "Student",
+    "portions": "1",
+    "name": "Havregrynsgröt",
+    "urlToImg": "http://Havregrynsgröt.png"
   }
 ]
