@@ -1,5 +1,3 @@
-// const Recipe = require('./recipe.class');
-
 const fs = require('fs');
 const path = require('path');
 const recipePath = path.join(__dirname, '../json/recipes.json');
@@ -7,21 +5,50 @@ let recipes = require(recipePath);
 
 module.exports = class Routes {
 
+
+
   constructor(app, nutrients) {
     this.app = app;
     this.nutrients = nutrients;
+    this.recipeObj = {
+      ingredients: [],
+      instructions: []
+    };
+    this.bengts = [];
     this.setRoutes();
   }
 
   setRoutes() {
 
+    // ########################################## |
+    // #           INDEX.html ROUTES            # |
+    // ########################################## v
+    this.app.get('/bengt-demo-form', (req, res) => {
+      res.sendFile(path.join(__dirname, '../www/bengt.html'));
+    });
 
-   // Recipes
+    // {bengts: [{}, {}, ..., {}] }
+    this.app.get('/bengts', (req, res) => {
+      res.json({ bengts: this.bengts });
+    })
+
+    // newBengt = {name: 'BENGT URLZ'}
+    this.app.post('/bengt-demo-form', (req, res) => {
+      console.log(req.body);
+
+      let newBengt = { name: req.body.bengt_value };
+      console.log('New bengt added: ', JSON.stringify(newBengt));
+      this.bengts.push(newBengt);
+
+      res.json({ message: 'OK', bengts: this.bengts });
+    });
+
+    // Recipes
     this.app.get('/recipes', (req, res) => {
       res.json({ error: 'Please provide at least two characters...' });
     });
 
-     // find all recipes matching the word the user wrote
+    // find all recipes matching the word the user wrote
     this.app.get(
       '/recipes/:partOfRecipeName',
       async (req, res) => {
@@ -48,40 +75,19 @@ module.exports = class Routes {
           res.json({ error: 'No recipe name' });
           return;
         }
-       
-        //
-        // function process(callback) {
-        //   let x = bla()
-        //   let y = bloo()
-
-        //   let addedValue = x + y
-
-        //   // Now I'm done with my processing, let's inform the users that we are done -- WE CALL BACK HOME!
-        //   callback(addedValue);
-        // }
-
-        // function printValue(value) {
-        //   console.log('WE ARE DONE, WE GOT VALUE' + value)
-        // }
-
-        // process(printValue);
-
-        // Array.prototype.find = function find(callback) {
-        //   for(var i = 0; i < this.values.length; i++) {
-        //     if (callback(this.values[i])) {
-        //       return this.values[i];
-        //     }
-        //   }
-
-        //   return undefined;
-        // }
-
-        // [1,2,3,54,56].find((x) => true);
 
         let recipe = recipes.find((recipe) => recipe.name.toLowerCase().includes(value));
         res.json(recipe);
       }
     );
+
+    // ########################################## |
+    // #          ADMIN.html ROUTES             # |
+    // ########################################## v
+
+    this.app.get('/admin', (req, res) => {
+      res.sendFile(path.join(__dirname, '../www/admin.html'));
+    })
 
     // post new recipe
     this.app.post('/recipes', (req, res) => {
@@ -93,6 +99,39 @@ module.exports = class Routes {
       });
     });
 
+    ////////////////////////////////////////////
+
+   /*  this.app.get('/fetch-name', (req, res) => {
+      res.json(this.recipeObj.name);
+    }) */
+
+    this.app.post('/add-name', (req, res) => {
+      console.log(req.body);
+      let newName = req.body.recipe_name;
+
+      console.log('New name added: ', newName);
+      this.recipeObj.name = newName;
+
+      res.json(this.recipeObj.name);
+    });
+
+    this.app.post('/add-ingredient', (req, res) => {
+      console.log(req.body);
+
+      let newIngredient = {
+        name: req.body.ingredient_name,
+        units: req.body.ingredient_units,
+        measuringUnit: req.body.ingredient_measuring_unit,
+        unitEquivalentInGrams: req.body.ingredient_grams
+      };
+
+      console.log('New ingredient added: ', JSON.stringify(newIngredient));
+      this.recipeObj.ingredients.push(newIngredient);
+
+      res.json({ message: 'OK', recipeObj: this.recipeObj.ingredients });
+    });
+
+    /////////////////////////////////////////////
 
     // ingredients
     this.app.get('/ingredients', (req, res) => {
@@ -119,7 +158,5 @@ module.exports = class Routes {
         res.json(result);
       }
     );
-
   }
-
 }

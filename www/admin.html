@@ -13,64 +13,86 @@
 <body>
 
   <header>
-    <a href="/index.html">index sidan</a>
+
   </header>
 
-  <section id="add-a-new-recipe-view">
+  <div id="new-recipe-box" class="container">
+    <h2>Skapa recept</h2>
 
-    <h2>Lägg till ett nytt recept här!</h2>
+    <main>
 
-    <section>
-      <form>
-        <div class="form-group">
-          <label for="recipe-name">Titel på recept</label><br>
-          <input id="recipe-name" type="text">
+      <form id="name-form" class="form-inline">
+        <div class="input-group">
+          <label for="name" class="sr-only">Namn</label>
+          <input input id="recipe-name" type="text" name="recipe_name" class="form-control" placeholder="Namn">
+          <div class="input-group-append">
+            <button id="add_name" type="submit" class="btn btn-default">Lägg till</button>
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="tag-selection">Välj Kategori</label><br>
-          <select id="tag-selection">
-            <option>Frukost</option>
-            <option>Middag</option>
-            <option>Efterrätt</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="load-image">Lägg till bild</label><br>
-          <input id="load-image" type="text">
-        </div>
-
-        <div class="form-group">
-          <label for="ingredient-search-value">Lägg till ingredienser</label><br>
-          <input id="ingredient-search-value" type="text">
-          <section id="display-ingredient-result"></section>
-        </div>
-
-        <div class="form-group">
-          <label for="instructions">Lägg till instruktioner</label><br>
-          <textarea id="instructions" type="text" rows="3"></textarea>
-          <input id="add-instructions" type="button" value="Lägg till">
-        </div>
-
       </form>
-    </section>
 
+      <form id="instruction-form" class="form-inline">
+        <div class="input-group">
+          <label for="recipe-instruction" class="sr-only">instruktioner</label>
+          <input input id="recipe-instruction" type="text" name="recipe_instruction" class="form-control" placeholder="Instruktion">
+          <div class="input-group-append">
+            <button id="add_name" type="submit" class="btn btn-default">Lägg till</button>
+          </div>
+        </div>
+      </form>
 
+      <form id="ingredient-form" class="form-inline">
+        <div class="input-group">
+          <label for="ingredient" class="sr-only">Ingrediens</label>
+          <input input id="ingredient-name" type="text" name="ingredient_name" value="" class="form-control"
+            placeholder="Ingrediens">
+        </div>
+        <div class="input-group">
+          <label for="units" class="sr-only">Mängd</label>
+          <input input id="units" type="text" name="ingredient_units" class="form-control" placeholder="Mängd">
+        </div>
+        <div class="input-group">
+          <label for="measureUnit" class="sr-only">Måttenhet</label>
+          <input input id="measureUnit" type="text" name="ingredient_measuring_unit" class="form-control" placeholder="Enhet">
+        </div>
+        <div class="input-group">
+          <label for="grams" class="sr-only">Gram</label>
+          <input input id="grams" type="text" name="ingredient_grams" class="form-control" placeholder="Gram">
+        </div>
+        <div class="input-group-append">
+          <button id="add_ingredient" type="submit" class="btn btn-default">Lägg till</button>
+        </div>
+      </form>
+      <section id="display-ingredients"></section>
+  </div>
 
-  </section>
+  </main>
 
-  <footer>
-    <p>Marie-Charlotte Persson</p>
-    <p>2018</p>
-  </footer>
+  <div id="preview" class="container">
+    <h2>Förhandsgranskning</h2>
 
+    <h5>Titel</h5>
+    <div id="preview-name"></div>
+
+    <h5>Ingredienser</h5>
+    <ul id="preview-ingredient"></ul>
+
+    <h5>Beskrivning</h5>
+    <div id="preview-instruction"></div>
+  </div>
+
+  <div class="container">
+    <footer>
+      <p>Marie-Charlotte Persson</p>
+      <p>2018</p>
+    </footer>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-  <script src="/js/main.js"></script>
+  <script src="/js/admin.js"></script>
 </body>
 
 </html>
