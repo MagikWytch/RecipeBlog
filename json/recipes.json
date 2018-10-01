@@ -324,5 +324,30 @@
     ],
     "urlToImg": "/images/beautiful-pancake.jpg",
     "category": "Efterrätt"
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Lök gul",
+        "units": "6",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "400"
+      },
+      {
+        "name": "Kokosvatten",
+        "units": "10",
+        "measuringUnit": "l",
+        "unitEquivalentInGrams": "1000"
+      }
+    ],
+    "instructions": [
+      "Häll allt vatten i en stor kastrull och koka upp, lägg i buljongen.",
+      "Finhacka löken och släng ner då vattnet kokar.",
+      "Låt stå i 20 minuter, servera med knäckemacka och ost."
+    ],
+    "category": "Student",
+    "portions": "2",
+    "name": "Löksoppa",
+    "urlToImg": "http://bildpålöksoppa.png"
   }
 ]

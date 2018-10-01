@@ -68,7 +68,7 @@ module.exports = class Routes {
       res.sendFile(path.join(__dirname, '../www/admin.html'));
     })
 
-    // post new recipe
+    /* // post new recipe
     this.app.post('/recipes', (req, res) => {
       recipes = require(recipePath);
       recipes.push(req.body);
@@ -76,18 +76,31 @@ module.exports = class Routes {
         console.log(error);
         res.json({ success: !error })
       });
+    }); */
+
+
+    this.app.post('/recipes', (req, res) => {
+      recipes = require(recipePath);
+      recipes.push(this.recipeObj);
+      fs.writeFile(recipePath, JSON.stringify(recipes, null, '  '), error => {
+        console.log(error);
+        res.json({ success: !error })
+      });
     });
 
-    ////////////////////////////////////////////
 
     this.app.get('/clear-recipe-object', (req, res) => {
 
+      this.recipeObj.category = '';
+      this.recipeObj.portions = '';
       this.recipeObj.name = '';
+      this.recipeObj.urlToImg = '';
       this.recipeObj.instructions.length = 0;
       this.recipeObj.ingredients.length = 0;
 
       res.json(this.recipeObj);
     })
+
 
     this.app.post('/add-category', (req, res) => {
       console.log(req.body);
@@ -99,6 +112,19 @@ module.exports = class Routes {
       res.json(this.recipeObj.category);
     });
 
+
+    this.app.post('/add-portions', (req, res) => {
+      console.log(req.body);
+
+      let newPortions = req.body.recipe_portions;
+
+      console.log('New portions added: ', newPortions);
+      this.recipeObj.portions = newPortions;
+
+      res.json({ message: 'OK', recipeObj: this.recipeObj.portions });
+    });
+
+
     this.app.post('/add-name', (req, res) => {
       console.log(req.body);
       let newName = req.body.recipe_name;
@@ -109,16 +135,29 @@ module.exports = class Routes {
       res.json(this.recipeObj.name);
     });
 
+
     this.app.post('/add-instruction', (req, res) => {
       console.log(req.body);
 
       let newInstruction = req.body.recipe_instruction;
 
-      console.log('New instruction added: ', JSON.stringify(newInstruction));
+      console.log('New instruction added: ', newInstruction);
       this.recipeObj.instructions.push(newInstruction);
 
       res.json({ message: 'OK', recipeObj: this.recipeObj.instructions });
     });
+
+
+    this.app.post('/add-image', (req, res) => {
+      console.log(req.body);
+      let newImage = req.body.recipe_image;
+
+      console.log('New image added: ', newImage);
+      this.recipeObj.urlToImg = newImage;
+
+      res.json(this.recipeObj.urlToImg);
+    });
+
 
     this.app.post('/add-ingredient', (req, res) => {
       console.log(req.body);
@@ -136,12 +175,12 @@ module.exports = class Routes {
       res.json({ message: 'OK', recipeObj: this.recipeObj.ingredients });
     });
 
-    /////////////////////////////////////////////
-
+    
     // ingredients
     this.app.get('/ingredients', (req, res) => {
       res.json({ error: 'Please provide at least two characters...' });
     });
+
 
     // auto complete ingredient name and return what was found
     this.app.get(

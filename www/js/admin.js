@@ -1,6 +1,24 @@
 // ########################################## |
 // #            RECIPE                      # |
 // ########################################## v
+
+
+
+$(document).on('click', '#luke', function () {
+    console.log('NOOOOOOOOOOOOOOOOOoooooooohhhhh......!!!!!');
+
+    $.post('http://localhost:3000/recipes/', (data) => {
+
+
+        if (data.success) {
+            console.log("SUCCESS IN POSTING RECIPE?");
+        }
+        else {
+            console.log("ERROR IN POSTING RECIPE?")
+        }
+    });
+})
+
 function createRecipeObject() {
 
 }
@@ -15,6 +33,7 @@ function postARecipe(recipeObj) {
         success: d => console.log("SUCCESS IN POSTING RECIPE?", d)
     });
 }
+
 // cool feature where this code runs on refresh,
 // right now the only thing it does is to clear the object...
 $.get('http://localhost:3000/clear-recipe-object').done(function (data) {
@@ -39,6 +58,27 @@ $('#add_category').on('click', () => {
             $('#preview-category').empty()
             if (data) {
                 $('#preview-category').append($('<p>' + data + '</p>'));
+            }
+        });
+})
+
+$('#portions-form').submit((event) => {
+    event.preventDefault();
+})
+
+// put the name into the object
+$('#add_portions').on('click', () => {
+    console.log('CLICKED');
+
+    let portionsForm = $('#portions-form').serialize();
+
+    $.post('http://localhost:3000/add-portions', portionsForm)
+        .done(function (data) {
+console.log(data, 'I am data, what am I?');
+            $('.clear-input').val('');
+            $('#preview-portions').empty()
+            if (data.recipeObj) {
+                $('#preview-portions').append($('<p>' + data.recipeObj + '</p>'));
             }
         });
 })
@@ -77,12 +117,35 @@ $('#add_instruction').on('click', () => {
     $.post('http://localhost:3000/add-instruction', instructionForm)
         .done(function (data) {
 
+
+
             $('.clear-input').val('');
             $('#preview-instruction').empty()
             if (data.recipeObj) {
                 data.recipeObj.forEach(instruction =>
                     $('#preview-instruction').append(
                         $('<li>' + instruction + '</li>')));
+            }
+        });
+})
+
+$('#image-form').submit((event) => {
+    event.preventDefault();
+})
+
+// put the name into the object
+$('#add_image').on('click', () => {
+    console.log('CLICKED');
+
+    let imageForm = $('#image-form').serialize();
+
+    $.post('http://localhost:3000/add-image', imageForm)
+        .done(function (data) {
+
+            $('.clear-input').val('');
+            $('#preview-image').empty()
+            if (data) {
+                $('#preview-image').append($('<p>' + data + '</p>'));
             }
         });
 })

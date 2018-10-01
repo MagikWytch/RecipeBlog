@@ -21,7 +21,7 @@
 
     <main>
 
-      <form id="category-form" class="form-inline">
+      <form id="category-form">
         <div class="input-group">
           <label for="recipe-category" class="sr-only">Kategori</label>
           <select id="recipe-category" type="text" name="recipe_category" class="form-control">
@@ -37,7 +37,18 @@
         </div>
       </form>
 
-      <form id="name-form" class="form-inline">
+      <form id="portions-form">
+        <div class="input-group">
+          <label for="recipe-portions" class="sr-only">Portioner</label>
+          <input input id="recipe-portions" type="text" name="recipe_portions" class="form-control clear-input"
+            placeholder="Antal portioner">
+          <div class="input-group-append">
+            <button id="add_portions" type="submit" class="btn btn-default">Lägg till</button>
+          </div>
+        </div>
+      </form>
+
+      <form id="name-form">
         <div class="input-group">
           <label for="name" class="sr-only">Namn</label>
           <input input id="recipe-name" type="text" name="recipe_name" class="form-control clear-input" placeholder="Namn">
@@ -47,7 +58,7 @@
         </div>
       </form>
 
-      <form id="instruction-form" class="form-inline">
+      <form id="instruction-form">
         <div class="input-group">
           <label for="recipe-instruction" class="sr-only">Instruktioner</label>
           <input input id="recipe-instruction" type="text" name="recipe_instruction" class="form-control clear-input"
@@ -58,9 +69,9 @@
         </div>
       </form>
 
-      <form id="image-form" class="form-inline">
+      <form id="image-form">
         <div class="input-group">
-          <label for="recipe-image" class="sr-only">instruktioner</label>
+          <label for="recipe-image" class="sr-only">Bild</label>
           <input input id="recipe-image" type="text" name="recipe_image" class="form-control clear-input" placeholder="Ladda upp bild">
           <div class="input-group-append">
             <button id="add_image" type="submit" class="btn btn-default">Lägg till</button>
@@ -87,6 +98,7 @@
             <option value="tsk">tsk</option>
             <option value="krm">krm</option>
             <option value="g">g</option>
+            <option value="st">st</option>
             <option value="kg">kg</option>
             <option value="l">l</option>
           </select>
@@ -107,9 +119,12 @@
 
   <div id="preview" class="container">
     <h2>Mitt recept!</h2>
-    
+
     <h5>Kategori</h5>
     <div id="preview-category"></div>
+
+    <h5>Antal portioner</h5>
+    <div id="preview-portions"></div>
 
     <h5>Namn</h5>
     <div id="preview-name"></div>
@@ -121,9 +136,9 @@
     <div id="preview-image"></div>
 
     <h5>Instruktioner</h5>
-    <div id="preview-instruction"></div>
+    <ol id="preview-instruction"></ol>
 
-    <button id="create_recipe" type="submit" class="btn btn-default">Skapa recept</button>
+    <button id="luke" type="submit" class="btn btn-default">I AM YOUR FATHER!</button>
   </div>
 
   <div class="container">
