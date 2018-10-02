@@ -2,8 +2,6 @@
 // #            RECIPE                      # |
 // ########################################## v
 
-
-
 $(document).on('click', '#luke', function () {
     console.log('NOOOOOOOOOOOOOOOOOoooooooohhhhh......!!!!!');
     $('.empty-preview').empty()
@@ -23,7 +21,7 @@ function createRecipeObject() {
 
 }
 
-// create the new file and add it to the recipes.json
+/* // create the new file and add it to the recipes.json
 function postARecipe(recipeObj) {
     $.ajax({
         method: 'POST',
@@ -32,7 +30,7 @@ function postARecipe(recipeObj) {
         data: JSON.stringify(recipeObj),
         success: d => console.log("SUCCESS IN POSTING RECIPE?", d)
     });
-}
+} */
 
 // cool feature where this code runs on refresh,
 // right now the only thing it does is to clear the object...

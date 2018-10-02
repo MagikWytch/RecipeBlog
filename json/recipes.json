@@ -366,5 +366,165 @@
     "portions": "1",
     "name": "Havregrynsgröt",
     "urlToImg": "http://Havregrynsgröt.png"
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Saftkräm pastöriserad berik",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "500"
+      }
+    ],
+    "instructions": [
+      "Rör om i gröten"
+    ],
+    "nutrition": [],
+    "category": "Frukost",
+    "portions": "2",
+    "name": "Medusa",
+    "urlToImg": "BestPicture"
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Saftkräm",
+        "units": "",
+        "measuringUnit": "0",
+        "unitEquivalentInGrams": ""
+      }
+    ],
+    "instructions": [
+      "Rör om i gröten"
+    ],
+    "nutrition": [],
+    "category": "Frukost",
+    "portions": "2",
+    "name": "Medusa",
+    "urlToImg": "BestPicture"
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Saftkräm",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "500"
+      }
+    ],
+    "instructions": [
+      "Rör om i gröten"
+    ],
+    "nutrition": [],
+    "category": "Frukost",
+    "portions": "2",
+    "name": "Medusa",
+    "urlToImg": "BestPicture"
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Saftkräm",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "500"
+      }
+    ],
+    "instructions": [],
+    "nutrition": [],
+    "category": "Frukost",
+    "portions": "2",
+    "name": "Medusa",
+    "urlToImg": "BestPicture"
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Saftkräm pastöriserad berik",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "500"
+      }
+    ],
+    "instructions": [
+      "Rör om i gröten"
+    ],
+    "nutrition": [],
+    "category": "Frukost",
+    "portions": "2",
+    "name": "Medusa",
+    "urlToImg": "BestPicture"
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Saftkräm",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "500"
+      },
+      {
+        "name": "Lök gul",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "500"
+      },
+      {
+        "name": "Lapskojs",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "500"
+      }
+    ],
+    "instructions": [],
+    "nutrition": []
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Saftkräm",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "500"
+      },
+      {
+        "name": "Saffransbröd",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "500"
+      }
+    ],
+    "instructions": [
+      "Rör om i gröten"
+    ],
+    "nutrition": [],
+    "category": "Frukost",
+    "portions": "2",
+    "name": "Medusa",
+    "urlToImg": "BestPicture"
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Saftkräm",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "500"
+      },
+      {
+        "name": "Saftsoppa",
+        "units": "500",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "asdasd"
+      }
+    ],
+    "instructions": [
+      "Rör om i gröten"
+    ],
+    "nutrition": [],
+    "category": "Frukost",
+    "portions": "2",
+    "name": "Medusa",
+    "urlToImg": "BestPicture"
   }
 ]

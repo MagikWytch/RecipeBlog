@@ -5,8 +5,6 @@ let recipes = require(recipePath);
 
 module.exports = class Routes {
 
-
-
   constructor(app, ingredientData) {
     this.app = app;
     this.ingredientData = ingredientData;
@@ -94,7 +92,7 @@ module.exports = class Routes {
       }
     );
 
-    // find recipe by exact name and return it
+    /* // find recipe by exact name and return it
     this.app.get(
       '/ingredient-by-name/:name',
       async (req, res) => {
@@ -104,15 +102,50 @@ module.exports = class Routes {
           return;
         }
 
-        let result = this.ingredientData.find((ingredient) => ingredient.name.toLowerCase().includes(value));
+        let result = this.ingredientData.find((ingredient) => ingredient.Namn.toLowerCase().includes(value));
         res.json(result);
       }
-    );
+    ); */
 
-
+    ////////////////////////////////////////////////////////////////
     this.app.post('/recipes', (req, res) => {
 
-      for(let ingredient in this.ingredientData)
+      console.log(this.recipeObj, 'recipe object in post');
+
+      let nutritions = {
+        energiKcal: 0,
+        protein: 0,
+        carbs: 0,
+        sugar: 0,
+        saturatedFat: 0,
+        unSaturatedFat: 0,
+        polyUnsaturatedFat: 0,
+        salt: 0,
+      };
+
+      for (let key in this.recipeObj.ingredients) {
+
+        let recipeIngName = this.recipeObj.ingredients[key].name.toLowerCase();
+        console.log(recipeIngName, '<-- namnet från ingrediensen i mitt recept');
+
+        /* 
+                let kolesterol = nutrition.Naringsvarden.Naringsvarde.find((namn) => namn.Namn.toLowerCase().includes("kolesterol"));
+                let energi = nutrition.Naringsvarden.Naringsvarde.find((namn) => namn.Namn.toLowerCase().includes("energi"));
+                let kolhydrat = nutrition.Naringsvarden.Naringsvarde.find((namn) => namn.Namn.toLowerCase().includes("kolhydrat")); */
+
+
+        let ingredientObj = this.ingredientData.find(
+          (ingredient) => ingredient.Namn.toLowerCase().includes(recipeIngName));
+        console.log(ingredientObj.Naringsvarden.Naringsvarde.Namn, '<-- ingredient object namnet');
+
+
+        let myValue = ingredientObj.Naringsvarden.Naringsvarde.find(x => x.Namn.toLowerCase().includes("Energi (kcal)")).Varde
+        console.log(myValue, '<-- WHAT IS tHIS?');
+      }
+
+
+
+
 
 
 
@@ -204,6 +237,7 @@ module.exports = class Routes {
         measuringUnit: req.body.ingredient_measuring_unit,
         unitEquivalentInGrams: req.body.ingredient_grams
       };
+      console.log(newIngredient)
 
       console.log('New ingredient added: ', JSON.stringify(newIngredient));
       this.recipeObj.ingredients.push(newIngredient);

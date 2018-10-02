@@ -11,9 +11,9 @@ let server = app.listen(3000, () => {
 });
 
 const Ingredients = require('./classes/ingredients.class.js');
-let nutrients = require('./json/livsmedelsdata.json');
-nutrients = nutrients.map(obj => new Ingredients(obj));
+let ingredientData = require('./json/livsmedelsdata.json');
+ingredientData = ingredientData.map(obj => new Ingredients(obj));
 
 // Create server routes 
 let Routes = require('./classes/routes.class.js');
-new Routes(app, nutrients);
+new Routes(app, ingredientData);
