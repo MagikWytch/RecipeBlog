@@ -2,24 +2,18 @@
 // #            RECIPE                      # |
 // ########################################## v
 
-$(document).on('click', '#luke', function () {
-    console.log('NOOOOOOOOOOOOOOOOOoooooooohhhhh......!!!!!');
+$(document).on('click', '#create_recipe', function () {
     $('.empty-preview').empty()
     $.post('http://localhost:3000/recipes/', (data) => {
 
-
         if (data.success) {
-            console.log("SUCCESS IN POSTING RECIPE?");
+            console.log("Recipe created!");
         }
         else {
-            console.log("ERROR IN POSTING RECIPE?")
+            console.log("Failed to write to file!")
         }
     });
 })
-
-function createRecipeObject() {
-
-}
 
 /* // create the new file and add it to the recipes.json
 function postARecipe(recipeObj) {
@@ -44,7 +38,6 @@ $('#category-form').submit((event) => {
 
 // put the name into the object
 $('#add_category').on('click', () => {
-    console.log('CLICKED');
 
     let categoryForm = $('#category-form').serialize();
 
@@ -66,13 +59,11 @@ $('#portions-form').submit((event) => {
 
 // put the name into the object
 $('#add_portions').on('click', () => {
-    console.log('CLICKED');
 
     let portionsForm = $('#portions-form').serialize();
 
     $.post('http://localhost:3000/add-portions', portionsForm)
         .done(function (data) {
-            console.log(data, 'I am data, what am I?');
             $('.clear-input').val('');
             $('#preview-portions').empty()
             if (data.recipeObj) {
@@ -87,8 +78,6 @@ $('#name-form').submit((event) => {
 
 // put the name into the object
 $('#add_name').on('click', () => {
-    console.log('CLICKED');
-
     let nameForm = $('#name-form').serialize();
 
     $.post('http://localhost:3000/add-name', nameForm)
@@ -108,8 +97,6 @@ $('#instruction-form').submit((event) => {
 
 // put the instruction into the object
 $('#add_instruction').on('click', () => {
-    console.log('CLICKED');
-
     let instructionForm = $('#instruction-form').serialize();
 
     $.post('http://localhost:3000/add-instruction', instructionForm)
@@ -133,8 +120,6 @@ $('#image-form').submit((event) => {
 
 // put the name into the object
 $('#add_image').on('click', () => {
-    console.log('CLICKED');
-
     let imageForm = $('#image-form').serialize();
 
     $.post('http://localhost:3000/add-image', imageForm)
@@ -154,7 +139,6 @@ $('#ingredient-form').submit((event) => {
 
 // put the ingredient into the object
 $('#add_ingredient').on('click', () => {
-    console.log('CLICKED');
     let ingredientForm = $('#ingredient-form').serialize();
 
     $.post('http://localhost:3000/add-ingredient', ingredientForm)

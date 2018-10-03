@@ -22,23 +22,18 @@ function getRecipes(valueToSearchFor) {
 
     $.get('http://localhost:3000/recipes/' + valueToSearchFor, (data) => {
 
-        let recipes = handleSomeErrors(data);
+        if (data.error) {
+            $('#display-recipe-result').append(` <p> Skriv minst 2 bokstäver </p> `);
+        }
+        else if (data.length === 0) {
+            $('#display-recipe-result').append(` <p> Det du sökte på kunde inte hittas </p> `);
+        }
+        else {
+            addRecipes(data);
+        }
 
-        addRecipes(recipes);
 
     });
-}
-
-function handleSomeErrors(data) {
-    if (data.error) {
-        $('#display-recipe-result').append(` <p> Skriv minst 2 bokstäver </p> `);
-    }
-    else if (data.length === 0) {
-        $('#display-recipe-result').append(` <p> Det du sökte på kunde inte hittas </p> `);
-    }
-    else {
-        return data;
-    }
 }
 
 function addRecipes(recipes) {

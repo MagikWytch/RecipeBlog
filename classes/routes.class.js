@@ -11,7 +11,6 @@ module.exports = class Routes {
     this.recipeObj = {
       ingredients: [],
       instructions: [],
-      nutrition: []
     };
     this.setRoutes();
   }
@@ -112,7 +111,7 @@ module.exports = class Routes {
 
       console.log(this.recipeObj, 'recipe object in post');
 
-      let nutritions = {
+      let nutrition = {
         energiKcal: 0,
         protein: 0,
         carbs: 0,
@@ -126,21 +125,11 @@ module.exports = class Routes {
       for (let key in this.recipeObj.ingredients) {
 
         let recipeIngName = this.recipeObj.ingredients[key].name.toLowerCase();
-        console.log(recipeIngName, '<-- namnet från ingrediensen i mitt recept');
-
-        /* 
-                let kolesterol = nutrition.Naringsvarden.Naringsvarde.find((namn) => namn.Namn.toLowerCase().includes("kolesterol"));
-                let energi = nutrition.Naringsvarden.Naringsvarde.find((namn) => namn.Namn.toLowerCase().includes("energi"));
-                let kolhydrat = nutrition.Naringsvarden.Naringsvarde.find((namn) => namn.Namn.toLowerCase().includes("kolhydrat")); */
-
 
         let ingredientObj = this.ingredientData.find(
           (ingredient) => ingredient.Namn.toLowerCase().includes(recipeIngName));
-        console.log(ingredientObj.Naringsvarden.Naringsvarde.Namn, '<-- ingredient object namnet');
 
-
-        let myValue = ingredientObj.Naringsvarden.Naringsvarde.find(x => x.Namn.toLowerCase().includes("Energi (kcal)")).Varde
-        console.log(myValue, '<-- WHAT IS tHIS?');
+        let myValue = ingredientObj.Naringsvarden.Naringsvarde.find(x => x.Namn == "Energi (kcal)").Varde
       }
 
 
@@ -172,10 +161,7 @@ module.exports = class Routes {
 
 
     this.app.post('/add-category', (req, res) => {
-      console.log(req.body);
       let newCategory = req.body.recipe_category;
-
-      console.log('New category added: ', newCategory);
       this.recipeObj.category = newCategory;
 
       res.json(this.recipeObj.category);
@@ -183,11 +169,7 @@ module.exports = class Routes {
 
 
     this.app.post('/add-portions', (req, res) => {
-      console.log(req.body);
-
       let newPortions = req.body.recipe_portions;
-
-      console.log('New portions added: ', newPortions);
       this.recipeObj.portions = newPortions;
 
       res.json({ message: 'OK', recipeObj: this.recipeObj.portions });
@@ -195,10 +177,7 @@ module.exports = class Routes {
 
 
     this.app.post('/add-name', (req, res) => {
-      console.log(req.body);
       let newName = req.body.recipe_name;
-
-      console.log('New name added: ', newName);
       this.recipeObj.name = newName;
 
       res.json(this.recipeObj.name);
@@ -206,11 +185,7 @@ module.exports = class Routes {
 
 
     this.app.post('/add-instruction', (req, res) => {
-      console.log(req.body);
-
       let newInstruction = req.body.recipe_instruction;
-
-      console.log('New instruction added: ', newInstruction);
       this.recipeObj.instructions.push(newInstruction);
 
       res.json({ message: 'OK', recipeObj: this.recipeObj.instructions });
@@ -218,10 +193,7 @@ module.exports = class Routes {
 
 
     this.app.post('/add-image', (req, res) => {
-      console.log(req.body);
       let newImage = req.body.recipe_image;
-
-      console.log('New image added: ', newImage);
       this.recipeObj.urlToImg = newImage;
 
       res.json(this.recipeObj.urlToImg);
@@ -229,17 +201,13 @@ module.exports = class Routes {
 
 
     this.app.post('/add-ingredient', (req, res) => {
-      console.log(req.body);
-
       let newIngredient = {
         name: req.body.ingredient_name,
         units: req.body.ingredient_units,
         measuringUnit: req.body.ingredient_measuring_unit,
         unitEquivalentInGrams: req.body.ingredient_grams
       };
-      console.log(newIngredient)
 
-      console.log('New ingredient added: ', JSON.stringify(newIngredient));
       this.recipeObj.ingredients.push(newIngredient);
 
       res.json({ message: 'OK', recipeObj: this.recipeObj.ingredients });
