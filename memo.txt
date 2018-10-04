@@ -1,3 +1,0 @@
-Vilka punkter har du kvar att göra för godkänt?
-Bootstrapen tar inte lång tid att fixa.
-view-source:http://getbootstrap.com/docs/4.1/examples/checkout/

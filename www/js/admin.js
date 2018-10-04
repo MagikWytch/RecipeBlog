@@ -28,8 +28,9 @@ function postARecipe(recipeObj) {
 
 // cool feature where this code runs on refresh,
 // right now the only thing it does is to clear the object...
+// could also be used to fetch all the values again on reload
 $.get('http://localhost:3000/clear-recipe-object').done(function (data) {
-    console.log('cleared ', data, ' from server');
+   // some code here
 })
 
 $('#category-form').submit((event) => {
@@ -53,11 +54,11 @@ $('#add_category').on('click', () => {
         });
 })
 
-$('#portions-form').submit((event) => {
+/* $('#portions-form').submit((event) => {
     event.preventDefault();
-})
+}) */
 
-// put the name into the object
+/* // put the name into the object
 $('#add_portions').on('click', () => {
 
     let portionsForm = $('#portions-form').serialize();
@@ -70,7 +71,7 @@ $('#add_portions').on('click', () => {
                 $('#preview-portions').append($('<p>' + data.recipeObj + '</p>'));
             }
         });
-})
+}) */
 
 $('#name-form').submit((event) => {
     event.preventDefault();

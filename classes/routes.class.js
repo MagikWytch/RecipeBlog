@@ -91,7 +91,7 @@ module.exports = class Routes {
       }
     );
 
-    /* // find recipe by exact name and return it
+    /* // find ingredient by exact name and return it
     this.app.get(
       '/ingredient-by-name/:name',
       async (req, res) => {
@@ -106,37 +106,47 @@ module.exports = class Routes {
       }
     ); */
 
-    ////////////////////////////////////////////////////////////////
+
     this.app.post('/recipes', (req, res) => {
 
-      console.log(this.recipeObj, 'recipe object in post');
-
       let nutrition = {
-        energiKcal: 0,
-        protein: 0,
-        carbs: 0,
-        sugar: 0,
-        saturatedFat: 0,
-        unSaturatedFat: 0,
-        polyUnsaturatedFat: 0,
-        salt: 0,
+        "Energi (kcal)": 0,
+        "Protein": 0,
+        "Kolhydrater": 0,
+        "Socker totalt": 0,
+        "Summa mättade fettsyror": 0,
+        "Summa enkelomättade fettsyror": 0,
+        "Summa fleromättade fettsyror": 0,
+        "Salt": 0,
       };
 
       for (let key in this.recipeObj.ingredients) {
 
-        let recipeIngName = this.recipeObj.ingredients[key].name.toLowerCase();
+        let ingredientName = this.recipeObj.ingredients[key].name.toLowerCase();
+        let ingredientUnits = this.recipeObj.ingredients[key].units;
+        let ingredientUnitInGrams = this.recipeObj.ingredients[key].unitEquivalentInGrams;
 
         let ingredientObj = this.ingredientData.find(
-          (ingredient) => ingredient.Namn.toLowerCase().includes(recipeIngName));
+          (ingredient) => ingredient.Namn.toLowerCase().includes(ingredientName));
+        let ingredientData = ingredientObj.Naringsvarden.Naringsvarde;
 
-        let myValue = ingredientObj.Naringsvarden.Naringsvarde.find(x => x.Namn == "Energi (kcal)").Varde
+
+        for (let nutrient in ingredientData) {
+          let nutrientName = ingredientData[nutrient].Namn;
+          if (nutrientName in nutrition) {
+
+            let value = ingredientData[nutrient].Varde;
+            let valueWithDot = value.replace(",", ".");
+            let parsedValue = parseFloat(valueWithDot);
+
+            let result = parsedValue * ingredientUnits * ingredientUnitInGrams / 100;
+            nutrition[nutrientName] += result;
+          }
+        }
       }
 
-
-
-
-
-
+      this.recipeObj.nutritions = nutrition;
+      this.recipeObj.portions = 1;
 
       recipes = require(recipePath);
       recipes.push(this.recipeObj);
@@ -144,8 +154,8 @@ module.exports = class Routes {
         console.log(error);
         res.json({ success: !error })
       });
-    });
 
+    });
 
     this.app.get('/clear-recipe-object', (req, res) => {
 
@@ -168,12 +178,12 @@ module.exports = class Routes {
     });
 
 
-    this.app.post('/add-portions', (req, res) => {
+    /* this.app.post('/add-portions', (req, res) => {
       let newPortions = req.body.recipe_portions;
       this.recipeObj.portions = newPortions;
 
       res.json({ message: 'OK', recipeObj: this.recipeObj.portions });
-    });
+    }); */
 
 
     this.app.post('/add-name', (req, res) => {

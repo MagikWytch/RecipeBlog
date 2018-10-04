@@ -1,451 +1,183 @@
 [
   {
-    "name": "Ostkaka",
-    "persons": 1,
-    "instructions": [
-      "Sätt ugnen på 200 grader.",
-      "Vispa först ihop ägg och socker, vispa ihop men inte så hårt.",
-      "Hacka mandeln och blanda med mjölet, keson och grädden.",
-      "Baka i ugnen i ca 45 minuter, beroende på hur djup formen är. Låt kakan svalna.",
-      "Vispa grädden med lite socker.",
-      "Skär ut en trekant av ostkakan, klicka lite grädde och lägg hjortron på detta."
-    ],
     "ingredients": [
       {
-        "name": "ägg",
-        "units": 2,
-        "measuringUnit": "st",
-        "unitEquivalentInGrams": 40
-      },
-      {
-        "name": "socker",
-        "units": 3,
-        "measuringUnit": "msk",
-        "unitEquivalentInGrams": 10
-      },
-      {
-        "name": "mandel",
-        "units": 20,
+        "name": "Morot",
+        "units": "300",
         "measuringUnit": "g",
-        "unitEquivalentInGrams": 20
+        "unitEquivalentInGrams": "1"
       },
       {
-        "name": "mjöl",
-        "units": 3,
-        "measuringUnit": "msk",
-        "unitEquivalentInGrams": 10
-      },
-      {
-        "name": "keso",
-        "units": 450,
+        "name": "Halloumiost fett 22% ej stekt",
+        "units": "100",
         "measuringUnit": "g",
-        "unitEquivalentInGrams": 450
-      },
-      {
-        "name": "grädde",
-        "units": 0.5,
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": 50
-      }
-    ],
-    "urlToImg": "/images/beautiful-pancake.jpg",
-    "category": "Efterrätt"
-  },
-  {
-    "name": "Ostbulle",
-    "persons": 2,
-    "instructions": [
-      "Sätt ugnen på 200 grader.",
-      "Vispa först ihop ägg och socker, vispa ihop men inte så hårt.",
-      "Hacka mandeln och blanda med mjölet, keson och grädden.",
-      "Baka i ugnen i ca 45 minuter, beroende på hur djup formen är. Låt kakan svalna.",
-      "Vispa grädden med lite socker.",
-      "Skär ut en trekant av ostkakan, klicka lite grädde och lägg hjortron på detta."
-    ],
-    "ingredients": [
-      {
-        "name": "ägg",
-        "units": 2,
-        "measuringUnit": "st",
-        "unitEquivalentInGrams": 40
-      },
-      {
-        "name": "socker",
-        "units": 3,
-        "measuringUnit": "msk",
-        "unitEquivalentInGrams": 10
-      },
-      {
-        "name": "mandel",
-        "units": 20,
-        "measuringUnit": "g",
-        "unitEquivalentInGrams": 20
-      },
-      {
-        "name": "mjöl",
-        "units": 3,
-        "measuringUnit": "msk",
-        "unitEquivalentInGrams": 10
-      },
-      {
-        "name": "keso",
-        "units": 450,
-        "measuringUnit": "g",
-        "unitEquivalentInGrams": 450
-      },
-      {
-        "name": "grädde",
-        "units": 0.5,
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": 50
-      }
-    ],
-    "urlToImg": "/images/beautiful-pancake.jpg",
-    "category": "Efterrätt"
-  },
-  {
-    "name": "Pannkakor",
-    "persons": 2,
-    "instructions": [
-      "Blanda mjöl, bakpulver och salt i en bunke.",
-      "Vispa i hälften av mjölken och vispa till en jämn smet.",
-      "Tillsätt ägg, vaniljsocker, smält smör och resten av mjölken till pankakssmeten.",
-      "Smält en klick smör i en varm stekpanna.",
-      "Häll 1/2-1 deciliter pannkakssmet i stekpannan, beroende på hur tjocka pannkakor du vill ha.",
-      "Servera dina pannkakor med t.ex. vispad grädde, färska jordgubbar och en klick jordgubbssylt."
-    ],
-    "ingredients": [
-      {
-        "name": "vetemjöl",
-        "units": 2.5,
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": 250
-      },
-      {
-        "name": "bakpulver",
-        "units": 2.5,
-        "measuringUnit": "tsk",
-        "unitEquivalentInGrams": 5
-      },
-      {
-        "name": "mjölk",
-        "units": 6,
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": 600
-      },
-      {
-        "name": "ägg",
-        "units": 3,
-        "measuringUnit": "st",
-        "unitEquivalentInGrams": 30
-      },
-      {
-        "name": "smör",
-        "units": 2,
-        "measuringUnit": "msk",
-        "unitEquivalentInGrams": 10
-      }
-    ],
-    "urlToImg": "/images/beautiful-pancake.jpg",
-    "category": "Efterrätt"
-  },
-  {
-    "name": "Min bästa kladdkaka",
-    "persons": 2,
-    "instructions": [
-      "Blanda mjöl, bakpulver och salt i en bunke.",
-      "Vispa i hälften av mjölken och vispa till en jämn smet.",
-      "Tillsätt ägg, vaniljsocker, smält smör och resten av mjölken till pankakssmeten.",
-      "Smält en klick smör i en varm stekpanna.",
-      "Häll 1/2-1 deciliter pannkakssmet i stekpannan, beroende på hur tjocka pannkakor du vill ha.",
-      "Servera dina pannkakor med t.ex. vispad grädde, färska jordgubbar och en klick jordgubbssylt."
-    ],
-    "ingredients": [
-      {
-        "name": "vetemjöl",
-        "units": 2.5,
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": 250
-      },
-      {
-        "name": "bakpulver",
-        "units": 2.5,
-        "measuringUnit": "tsk",
-        "unitEquivalentInGrams": 5
-      },
-      {
-        "name": "mjölk",
-        "units": 6,
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": 600
-      },
-      {
-        "name": "ägg",
-        "units": 3,
-        "measuringUnit": "st",
-        "unitEquivalentInGrams": 30
-      },
-      {
-        "name": "smör",
-        "units": 2,
-        "measuringUnit": "msk",
-        "unitEquivalentInGrams": 10
-      }
-    ],
-    "urlToImg": "/images/beautiful-pancake.jpg",
-    "category": "Efterrätt"
-  },
-  {
-    "name": "Pasta med smör",
-    "persons": 2,
-    "instructions": [
-      "Häll vatten i en kastrull och koka upp på full värme.",
-      "När vattnet kokar häll i pastan, följ minutanvisningarna på förpackningen.",
-      "Fiska upp en bit pasta och kolla så att den är klar, ha gärna kvar lite tuggmotstånd.",
-      "Använd en sked och rör ner smör."
-    ],
-    "ingredients": [
-      {
-        "name": "Pasta",
-        "units": 4,
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": 350
-      },
-      {
-        "name": "smör",
-        "units": 3,
-        "measuringUnit": "tsk",
-        "unitEquivalentInGrams": 50
-      }
-    ],
-    "urlToImg": "/images/beautiful-pasta.jpg",
-    "category": "Middag"
-  },
-  {
-    "name": "Ostkakannnnnn",
-    "persons": 2,
-    "instructions": [
-      "Sätt ugnen på 200 grader.",
-      "Vispa först ihop ägg och socker, vispa ihop men inte så hårt.",
-      "Hacka mandeln och blanda med mjölet, keson och grädden.",
-      "Baka i ugnen i ca 45 minuter, beroende på hur djup formen är. Låt kakan svalna.",
-      "Vispa grädden med lite socker.",
-      "Skär ut en trekant av ostkakan, klicka lite grädde och lägg hjortron på detta."
-    ],
-    "ingredients": [
-      {
-        "name": "ägg",
-        "units": 2,
-        "measuringUnit": "st",
-        "unitEquivalentInGrams": 40
-      },
-      {
-        "name": "socker",
-        "units": 3,
-        "measuringUnit": "msk",
-        "unitEquivalentInGrams": 10
-      },
-      {
-        "name": "mandel",
-        "units": 20,
-        "measuringUnit": "g",
-        "unitEquivalentInGrams": 20
-      },
-      {
-        "name": "mjöl",
-        "units": 3,
-        "measuringUnit": "msk",
-        "unitEquivalentInGrams": 10
-      },
-      {
-        "name": "keso",
-        "units": 450,
-        "measuringUnit": "g",
-        "unitEquivalentInGrams": 450
-      },
-      {
-        "name": "grädde",
-        "units": 0.5,
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": 50
-      }
-    ],
-    "urlToImg": "/images/beautiful-pancake.jpg",
-    "category": "Efterrätt"
-  },
-  {
-    "name": "PrOstkakannnnnn",
-    "persons": 2,
-    "instructions": [
-      "Sätt ugnen på 200 grader.",
-      "Vispa först ihop ägg och socker, vispa ihop men inte så hårt.",
-      "Hacka mandeln och blanda med mjölet, keson och grädden.",
-      "Baka i ugnen i ca 45 minuter, beroende på hur djup formen är. Låt kakan svalna.",
-      "Vispa grädden med lite socker.",
-      "Skär ut en trekant av ostkakan, klicka lite grädde och lägg hjortron på detta."
-    ],
-    "ingredients": [
-      {
-        "name": "ägg",
-        "units": 2,
-        "measuringUnit": "st",
-        "unitEquivalentInGrams": 40
-      },
-      {
-        "name": "socker",
-        "units": 3,
-        "measuringUnit": "msk",
-        "unitEquivalentInGrams": 10
-      },
-      {
-        "name": "mandel",
-        "units": 20,
-        "measuringUnit": "g",
-        "unitEquivalentInGrams": 20
-      },
-      {
-        "name": "mjöl",
-        "units": 3,
-        "measuringUnit": "msk",
-        "unitEquivalentInGrams": 10
-      },
-      {
-        "name": "keso",
-        "units": 450,
-        "measuringUnit": "g",
-        "unitEquivalentInGrams": 450
-      },
-      {
-        "name": "grädde",
-        "units": 0.5,
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": 50
-      }
-    ],
-    "urlToImg": "/images/beautiful-pancake.jpg",
-    "category": "Efterrätt"
-  },
-  {
-    "ingredients": [
-      {
-        "name": "Lök gul",
-        "units": "6",
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": "400"
-      },
-      {
-        "name": "Kokosvatten",
-        "units": "10",
-        "measuringUnit": "l",
-        "unitEquivalentInGrams": "1000"
+        "unitEquivalentInGrams": "1"
       }
     ],
     "instructions": [
-      "Häll allt vatten i en stor kastrull och koka upp, lägg i buljongen.",
-      "Finhacka löken och släng ner då vattnet kokar.",
-      "Låt stå i 20 minuter, servera med knäckemacka och ost."
+      "Vi lagar lite saker och så."
     ],
     "category": "Student",
-    "portions": "2",
-    "name": "Löksoppa",
-    "urlToImg": "http://bildpålöksoppa.png"
+    "portions": 1,
+    "name": "Best mat ever",
+    "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2014/02/a-4lunc2.jpg",
+    "nutrition": {
+      "energyKcal": 400,
+      "protein": 24.34,
+      "carbs": 21.7,
+      "sugar": 19.5,
+      "saturatedFat": 15.06,
+      "unSaturatedFat": 4.57,
+      "polyUnsaturatedFat": 1.2200000000000002,
+      "salt": 4.44
+    }
   },
   {
     "ingredients": [
       {
-        "name": "Havregrynsgröt fullkorn fiberhavregryn",
+        "name": "Pasta Äggnudlar",
+        "units": "100",
+        "measuringUnit": "g",
+        "unitEquivalentInGrams": "1"
+      },
+      {
+        "name": "Kyckling bröstfilé u skinn strimlor wokad i rapsolja",
+        "units": "1",
+        "measuringUnit": "st",
+        "unitEquivalentInGrams": "150"
+      },
+      {
+        "name": "Vitlök",
+        "units": "1",
+        "measuringUnit": "st",
+        "unitEquivalentInGrams": "2"
+      },
+      {
+        "name": "Svamp konserv u lag",
+        "units": "100",
+        "measuringUnit": "g",
+        "unitEquivalentInGrams": "1"
+      },
+      {
+        "name": "Savojkål",
+        "units": "100",
+        "measuringUnit": "g",
+        "unitEquivalentInGrams": "1"
+      },
+      {
+        "name": "Sojasås",
+        "units": "1",
+        "measuringUnit": "msk",
+        "unitEquivalentInGrams": "15"
+      }
+    ],
+    "instructions": [
+      "Häll 3 dl kokande vatten i en kastrull och rör i misopastan. Strimla kycklingen, kålen och svampen i tunna bitar.",
+      "Tillsätt ingredienserna utom kålen och låt sjuda i 10 minuter.",
+      "Rör i kålen. Koka i ytterligare 3 minuter och servera."
+    ],
+    "category": "Middag",
+    "portions": 1,
+    "name": "Misosoppa med kyckling",
+    "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2014/08/0cfb5e64-f92e-45be-a33f-9b88b14c8216-700x700.jpg",
+    "nutrition": {
+      "energyKcal": 685.75,
+      "protein": 63.898,
+      "carbs": 74.312,
+      "sugar": 5.8180000000000005,
+      "saturatedFat": 2.0567999999999995,
+      "unSaturatedFat": 5.1202,
+      "polyUnsaturatedFat": 3.4450000000000003,
+      "salt": 4.2283
+    }
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Ägg konventionellt rått",
+        "units": "1",
+        "measuringUnit": "st",
+        "unitEquivalentInGrams": "30"
+      },
+      {
+        "name": "Socker",
+        "units": "2",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "50"
+      },
+      {
+        "name": "Banan",
+        "units": "2",
+        "measuringUnit": "st",
+        "unitEquivalentInGrams": "120"
+      },
+      {
+        "name": "Gräddfil fett 12%",
+        "units": "4",
+        "measuringUnit": "msk",
+        "unitEquivalentInGrams": "15"
+      },
+      {
+        "name": "Smör fett 80 %",
+        "units": "80",
+        "measuringUnit": "g",
+        "unitEquivalentInGrams": "1"
+      }
+    ],
+    "instructions": [
+      "Sätt ugnen på 175 grader. Smörj och bröa en kakform, ca 1½ l. Smält smöret och låt svalna. Mosa bananerna med en gaffel.",
+      "Vispa ägg och socker vitt och pösigt. Rör ner bananen och smöret. Blanda mjöl, bakpulver, bikarbonat och vaniljsocker. Rör ner blandningen i smeten och rör ner grädden.",
+      "Häll smeten i formen och grädda ca 45 minuter.",
+      "Fikadags!"
+    ],
+    "name": "Banankaka",
+    "portions": 1,
+    "category": "Efterrätt",
+    "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2013/09/banansockerkaka-700x700.jpg",
+    "nutrition": {
+      "energyKcal": 1346.9,
+      "protein": 18.255,
+      "carbs": 123.67800000000001,
+      "sugar": 47.76,
+      "saturatedFat": 51.882999999999996,
+      "unSaturatedFat": 20.891,
+      "polyUnsaturatedFat": 4.378,
+      "salt": 2.122
+    }
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Banan",
+        "units": "2",
+        "measuringUnit": "st",
+        "unitEquivalentInGrams": "125"
+      },
+      {
+        "name": "Filmjölk fett 3%",
         "units": "3",
         "measuringUnit": "dl",
         "unitEquivalentInGrams": "300"
       }
     ],
     "instructions": [
-      "Blanda ner havregryn med vatten och micra."
+      "Häll upp filmjölk.",
+      "Skriva banan över filmjölk.",
+      "Ät med en sked."
     ],
-    "category": "Student",
-    "portions": "1",
-    "name": "Havregrynsgröt",
-    "urlToImg": "http://Havregrynsgröt.png"
-  },
-  {
-    "ingredients": [
-      {
-        "name": "Saffransbröd",
-        "units": "50",
-        "measuringUnit": "g",
-        "unitEquivalentInGrams": "50"
-      }
-    ],
-    "instructions": [
-      "blanda mjöl och jäst",
-      "lägg i ugnen",
-      "klart"
-    ],
-    "nutrition": [],
     "category": "Frukost",
-    "portions": "1",
-    "name": "Saffransbröd",
-    "urlToImg": "BestPicture"
-  },
-  {
-    "ingredients": [
-      {
-        "name": "Köttfärs blandfärs nöt 50% gris 50% rå",
-        "units": "500",
-        "measuringUnit": "g",
-        "unitEquivalentInGrams": "500"
-      }
-    ],
-    "instructions": [
-      "ta kålhuvudet och gör mat av."
-    ],
-    "nutrition": [],
-    "category": "",
-    "portions": "10",
-    "name": "Kålpudding",
-    "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2014/01/IMG_1534-1-305x305.jpg"
-  },
-  {
-    "ingredients": [
-      {
-        "name": "Vitlök",
-        "units": "1",
-        "measuringUnit": "st",
-        "unitEquivalentInGrams": "30"
-      },
-      {
-        "name": "Creme Fraiche fett 13% smaksatt",
-        "units": "3",
-        "measuringUnit": "dl",
-        "unitEquivalentInGrams": "150"
-      }
-    ],
-    "instructions": [
-      "Pressa vitlöken ner i creme fraiche.",
-      "Rör om, ät."
-    ],
-    "nutrition": [],
-    "category": "Frukost",
-    "portions": "6",
-    "name": "Vitlökssås",
-    "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2013/08/image52-305x305.jpg"
-  },
-  {
-    "ingredients": [
-      {
-        "name": "Saftkräm",
-        "units": "",
-        "measuringUnit": "0",
-        "unitEquivalentInGrams": ""
-      }
-    ],
-    "instructions": [
-      "Rör om i gröten"
-    ],
-    "nutrition": [],
-    "category": "",
-    "portions": "2",
-    "name": "Medusa",
-    "urlToImg": "BestPicture"
+    "portions": 1,
+    "name": "Filmjölk med banan",
+    "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2014/02/09f97524-7198-407b-9c15-bd922754ddae-700x700.jpg",
+    "nutritions": {
+      "Energi (kcal)": 765.5,
+      "Protein": 32.56,
+      "Kolhydrater": 96.4,
+      "Socker totalt": 67.94999999999999,
+      "Summa mättade fettsyror": 16.865,
+      "Summa enkelomättade fettsyror": 6.155000000000001,
+      "Summa fleromättade fettsyror": 1.2650000000000001,
+      "Salt": 0.9000000000000001
+    }
   }
 ]
