@@ -29,6 +29,7 @@ function postARecipe(recipeObj) {
 // cool feature where this code runs on refresh,
 // right now the only thing it does is to clear the object...
 // could also be used to fetch all the values again on reload
+// would be a nice function on the index page, to be continued
 $.get('http://localhost:3000/clear-recipe-object').done(function (data) {
    // some code here
 })

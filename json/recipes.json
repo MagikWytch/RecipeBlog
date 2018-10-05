@@ -21,15 +21,15 @@
     "portions": 1,
     "name": "Best mat ever",
     "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2014/02/a-4lunc2.jpg",
-    "nutrition": {
-      "energyKcal": 400,
-      "protein": 24.34,
-      "carbs": 21.7,
-      "sugar": 19.5,
-      "saturatedFat": 15.06,
-      "unSaturatedFat": 4.57,
-      "polyUnsaturatedFat": 1.2200000000000002,
-      "salt": 4.44
+    "nutritions": {
+      "Energi (kcal)": 340.2,
+      "Protein": 4.702999999999999,
+      "Kolhydrater": 43.282999999999994,
+      "Socker totalt": 33.195,
+      "Summa mättade fettsyror": 2.797,
+      "Summa enkelomättade fettsyror": 1.185,
+      "Summa fleromättade fettsyror": 0.11850000000000001,
+      "Salt": 1.231
     }
   },
   {
@@ -80,15 +80,15 @@
     "portions": 1,
     "name": "Misosoppa med kyckling",
     "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2014/08/0cfb5e64-f92e-45be-a33f-9b88b14c8216-700x700.jpg",
-    "nutrition": {
-      "energyKcal": 685.75,
-      "protein": 63.898,
-      "carbs": 74.312,
-      "sugar": 5.8180000000000005,
-      "saturatedFat": 2.0567999999999995,
-      "unSaturatedFat": 5.1202,
-      "polyUnsaturatedFat": 3.4450000000000003,
-      "salt": 4.2283
+    "nutritions": {
+      "Energi (kcal)": 340.2,
+      "Protein": 4.702999999999999,
+      "Kolhydrater": 43.282999999999994,
+      "Socker totalt": 33.195,
+      "Summa mättade fettsyror": 2.797,
+      "Summa enkelomättade fettsyror": 1.185,
+      "Summa fleromättade fettsyror": 0.11850000000000001,
+      "Salt": 1.231
     }
   },
   {
@@ -134,15 +134,15 @@
     "portions": 1,
     "category": "Efterrätt",
     "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2013/09/banansockerkaka-700x700.jpg",
-    "nutrition": {
-      "energyKcal": 1346.9,
-      "protein": 18.255,
-      "carbs": 123.67800000000001,
-      "sugar": 47.76,
-      "saturatedFat": 51.882999999999996,
-      "unSaturatedFat": 20.891,
-      "polyUnsaturatedFat": 4.378,
-      "salt": 2.122
+    "nutritions": {
+      "Energi (kcal)": 340.2,
+      "Protein": 4.702999999999999,
+      "Kolhydrater": 43.282999999999994,
+      "Socker totalt": 33.195,
+      "Summa mättade fettsyror": 2.797,
+      "Summa enkelomättade fettsyror": 1.185,
+      "Summa fleromättade fettsyror": 0.11850000000000001,
+      "Salt": 1.231
     }
   },
   {
@@ -170,14 +170,109 @@
     "name": "Filmjölk med banan",
     "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2014/02/09f97524-7198-407b-9c15-bd922754ddae-700x700.jpg",
     "nutritions": {
-      "Energi (kcal)": 765.5,
-      "Protein": 32.56,
-      "Kolhydrater": 96.4,
-      "Socker totalt": 67.94999999999999,
-      "Summa mättade fettsyror": 16.865,
-      "Summa enkelomättade fettsyror": 6.155000000000001,
-      "Summa fleromättade fettsyror": 1.2650000000000001,
-      "Salt": 0.9000000000000001
+      "Energi (kcal)": 340.2,
+      "Protein": 4.702999999999999,
+      "Kolhydrater": 43.282999999999994,
+      "Socker totalt": 33.195,
+      "Summa mättade fettsyror": 2.797,
+      "Summa enkelomättade fettsyror": 1.185,
+      "Summa fleromättade fettsyror": 0.11850000000000001,
+      "Salt": 1.231
+    }
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Tepulver",
+        "units": "2",
+        "measuringUnit": "tsk",
+        "unitEquivalentInGrams": "5"
+      },
+      {
+        "name": "Kranvatten",
+        "units": "1",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "100"
+      },
+      {
+        "name": "Mandeldryck",
+        "units": "3",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "300"
+      },
+      {
+        "name": "Vaniljsås pulver tillagad m mjölk",
+        "units": "1",
+        "measuringUnit": "tsk",
+        "unitEquivalentInGrams": "5"
+      },
+      {
+        "name": "Mjölk fett 4,2 % typ lantmjölk",
+        "units": "1",
+        "measuringUnit": "dl",
+        "unitEquivalentInGrams": "100"
+      }
+    ],
+    "instructions": [
+      "Blanda matchapulver och vatten till en slät blandning.",
+      "Värm upp mjölk, tillsätt sötning och kryddning.",
+      "Häll upp matchablandningen och fyll på med mjölkblandningen.",
+      "Toppa med skummad mjölk."
+    ],
+    "category": "Frukost",
+    "portions": 2,
+    "name": "Matcha latte",
+    "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2018/08/matcha-700x700.jpg",
+    "nutritions": {
+      "Energi (kcal)": 340.2,
+      "Protein": 4.702999999999999,
+      "Kolhydrater": 43.282999999999994,
+      "Socker totalt": 33.195,
+      "Summa mättade fettsyror": 2.797,
+      "Summa enkelomättade fettsyror": 1.185,
+      "Summa fleromättade fettsyror": 0.11850000000000001,
+      "Salt": 1.231
+    }
+  },
+  {
+    "ingredients": [
+      {
+        "name": "Rödbeta",
+        "units": "1",
+        "measuringUnit": "st",
+        "unitEquivalentInGrams": "50"
+      },
+      {
+        "name": "Apelsin",
+        "units": "1",
+        "measuringUnit": "st",
+        "unitEquivalentInGrams": "100"
+      },
+      {
+        "name": "Citron",
+        "units": "1",
+        "measuringUnit": "st",
+        "unitEquivalentInGrams": "100"
+      }
+    ],
+    "instructions": [
+      "Häll upp rödbetsjuice i ett glas.",
+      "Tillsätt pressad citron, apelsin, riven ingefära och mynta. (Det går bra att använda en mixer/juicepress/råsaftcentrifug om du önskar en slät vätska)",
+      "Tillsätt is innan servering."
+    ],
+    "category": "Frukost",
+    "portions": 2,
+    "name": "Rödbetsshot med ingefära",
+    "urlToImg": "https://mittkok.expressen.se/wp-content/uploads/2018/08/rodbetsshot_1-1-700x700.jpg",
+    "nutritions": {
+      "Energi (kcal)": 171.5,
+      "Protein": 11.965,
+      "Kolhydrater": 21.3,
+      "Socker totalt": 15.399999999999999,
+      "Summa mättade fettsyror": 1.835,
+      "Summa enkelomättade fettsyror": 0.6950000000000001,
+      "Summa fleromättade fettsyror": 0.215,
+      "Salt": 0.745
     }
   }
 ]

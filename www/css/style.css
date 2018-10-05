@@ -1,0 +1,22 @@
+strong {
+    font-family: 'Petit Formal Script', cursive;
+}
+
+body {
+    padding-top: 3.5em;
+}
+
+#recipe-image {
+    width: 50%;
+    height: 50%;
+    padding-bottom: 1.5em;
+}
+
+#display-recipe-result {
+    padding-bottom: 3.5em;
+}
+
+.jumbotron {
+    margin-bottom: 1em;
+}
+

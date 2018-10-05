@@ -43,6 +43,25 @@ module.exports = class Routes {
       }
     );
 
+    this.app.get(
+      '/recipes-by-tag/:category',
+      async (req, res) => {
+        let value = req.params.category.toLowerCase();
+
+        let result = recipes.filter(
+          recipe => recipe.category.toLowerCase().includes(value)
+        );
+        res.json(result);
+      }
+    );
+
+  /*   this.app.get(
+      '/get-all-recipes/',
+      async (req, res) => {
+        res.json(recipePath);
+      }
+    ); */
+
     // find recipe by exact name and return it
     this.app.get(
       '/recipe-by-name/:name',
@@ -146,7 +165,7 @@ module.exports = class Routes {
       }
 
       this.recipeObj.nutritions = nutrition;
-      this.recipeObj.portions = 1;
+      this.recipeObj.portions = 2;
 
       recipes = require(recipePath);
       recipes.push(this.recipeObj);
